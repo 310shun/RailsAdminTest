@@ -1,7 +1,29 @@
 # RailsAdmin config file. Generated on October 07, 2013 16:14
 # See github.com/sferik/rails_admin for more informations
 
+require 'custom_action'
+
 RailsAdmin.config do |config|
+
+  config.actions do
+    # root actions
+    dashboard do
+      statistics true
+    end
+    # collection actions 
+    index
+    new
+    export
+    bulk_delete
+    # member actions
+    show
+    edit
+    delete
+    show_in_app
+
+    custom_action_member # クラス名をアンダースコア形式で追加する
+    custom_action_group
+  end
 
 
   ################  Global configuration  ################
